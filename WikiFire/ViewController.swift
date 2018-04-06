@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        map.setRegion(MKCoordinateRegion(center: CLLocationCoordinate2D.init(latitude: 59.922940920663507, longitude: 10.717919865631757), span: MKCoordinateSpan.init(latitudeDelta: 0.031573216609345423, longitudeDelta: 0.032186511131243378)), animated: false)
+        map.setRegion(MKCoordinateRegion(center: CLLocationCoordinate2D.init(latitude: 59.9229, longitude: 10.7179), span: MKCoordinateSpan(latitudeDelta: 0.03157, longitudeDelta: 0.03218)), animated: false)
 
     }
 
