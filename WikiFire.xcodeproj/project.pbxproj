@@ -12,6 +12,7 @@
 		2CBC32DF20782DA000388EBA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CBC32DD20782DA000388EBA /* Main.storyboard */; };
 		2CBC32E120782DA100388EBA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CBC32E020782DA100388EBA /* Assets.xcassets */; };
 		2CBC32E420782DA100388EBA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CBC32E220782DA100388EBA /* LaunchScreen.storyboard */; };
+		2CBC32ED2078354300388EBA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2CBC32EC2078354300388EBA /* GoogleService-Info.plist */; };
 		514332C015E427047FAE573B /* Pods_WikiFire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 163E73B095F5344607464A11 /* Pods_WikiFire.framework */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +26,7 @@
 		2CBC32E020782DA100388EBA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2CBC32E320782DA100388EBA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2CBC32E520782DA100388EBA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2CBC32EC2078354300388EBA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		59CADF91EA49FFBB87A4311F /* Pods-WikiFire.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WikiFire.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WikiFire/Pods-WikiFire.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -67,6 +69,7 @@
 				2CBC32E020782DA100388EBA /* Assets.xcassets */,
 				2CBC32E220782DA100388EBA /* LaunchScreen.storyboard */,
 				2CBC32E520782DA100388EBA /* Info.plist */,
+				2CBC32EC2078354300388EBA /* GoogleService-Info.plist */,
 			);
 			path = WikiFire;
 			sourceTree = "<group>";
@@ -150,6 +153,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2CBC32E420782DA100388EBA /* LaunchScreen.storyboard in Resources */,
+				2CBC32ED2078354300388EBA /* GoogleService-Info.plist in Resources */,
 				2CBC32E120782DA100388EBA /* Assets.xcassets in Resources */,
 				2CBC32DF20782DA000388EBA /* Main.storyboard in Resources */,
 			);
@@ -370,7 +374,10 @@
 				DEVELOPMENT_TEAM = 2DP7F344NX;
 				INFOPLIST_FILE = WikiFire/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = no.shortcut.WikiFire;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -387,7 +394,10 @@
 				DEVELOPMENT_TEAM = 2DP7F344NX;
 				INFOPLIST_FILE = WikiFire/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = no.shortcut.WikiFire;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
