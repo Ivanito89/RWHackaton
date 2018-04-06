@@ -12,9 +12,12 @@
 		2CBC32DF20782DA000388EBA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CBC32DD20782DA000388EBA /* Main.storyboard */; };
 		2CBC32E120782DA100388EBA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CBC32E020782DA100388EBA /* Assets.xcassets */; };
 		2CBC32E420782DA100388EBA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CBC32E220782DA100388EBA /* LaunchScreen.storyboard */; };
+		514332C015E427047FAE573B /* Pods_WikiFire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 163E73B095F5344607464A11 /* Pods_WikiFire.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		163E73B095F5344607464A11 /* Pods_WikiFire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WikiFire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		213D0D5CCC4492ADB11E75B2 /* Pods-WikiFire.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WikiFire.release.xcconfig"; path = "Pods/Target Support Files/Pods-WikiFire/Pods-WikiFire.release.xcconfig"; sourceTree = "<group>"; };
 		2CBC32D620782DA000388EBA /* WikiFire.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WikiFire.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CBC32D920782DA000388EBA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2CBC32DB20782DA000388EBA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +25,7 @@
 		2CBC32E020782DA100388EBA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2CBC32E320782DA100388EBA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2CBC32E520782DA100388EBA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		59CADF91EA49FFBB87A4311F /* Pods-WikiFire.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WikiFire.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WikiFire/Pods-WikiFire.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				514332C015E427047FAE573B /* Pods_WikiFire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +45,8 @@
 			children = (
 				2CBC32D820782DA000388EBA /* WikiFire */,
 				2CBC32D720782DA000388EBA /* Products */,
+				7F2AF609FCB6936E15589C00 /* Pods */,
+				39802F48E2E5CFF349CEC4B2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +71,23 @@
 			path = WikiFire;
 			sourceTree = "<group>";
 		};
+		39802F48E2E5CFF349CEC4B2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				163E73B095F5344607464A11 /* Pods_WikiFire.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7F2AF609FCB6936E15589C00 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				59CADF91EA49FFBB87A4311F /* Pods-WikiFire.debug.xcconfig */,
+				213D0D5CCC4492ADB11E75B2 /* Pods-WikiFire.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2CBC32E820782DA100388EBA /* Build configuration list for PBXNativeTarget "WikiFire" */;
 			buildPhases = (
+				166163D640EC86C3585508C3 /* [CP] Check Pods Manifest.lock */,
 				2CBC32D220782DA000388EBA /* Sources */,
 				2CBC32D320782DA000388EBA /* Frameworks */,
 				2CBC32D420782DA000388EBA /* Resources */,
+				D31B6D151F34891CB05F652C /* [CP] Embed Pods Frameworks */,
+				5E7930D87D7743F5539505F7 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -129,6 +156,57 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		166163D640EC86C3585508C3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WikiFire-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5E7930D87D7743F5539505F7 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WikiFire/Pods-WikiFire-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D31B6D151F34891CB05F652C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WikiFire/Pods-WikiFire-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2CBC32D220782DA000388EBA /* Sources */ = {
@@ -278,16 +356,14 @@
 		};
 		2CBC32E920782DA100388EBA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 59CADF91EA49FFBB87A4311F /* Pods-WikiFire.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2DP7F344NX;
 				INFOPLIST_FILE = WikiFire/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = no.shortcut.WikiFire;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -297,16 +373,14 @@
 		};
 		2CBC32EA20782DA100388EBA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 213D0D5CCC4492ADB11E75B2 /* Pods-WikiFire.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2DP7F344NX;
 				INFOPLIST_FILE = WikiFire/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = no.shortcut.WikiFire;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
