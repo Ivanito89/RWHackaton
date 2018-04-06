@@ -21,12 +21,21 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="KC6-Fp-xdF">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </mapView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gps" translatesAutoresizingMaskIntoConstraints="NO" id="Zoh-Bl-xru">
+                                <rect key="frame" x="162" y="308.5" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="MnN-6S-7Zu"/>
+                                    <constraint firstAttribute="height" constant="50" id="edj-jV-Qmd"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="KC6-Fp-xdF" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="5KM-5d-ivx"/>
                             <constraint firstAttribute="bottom" secondItem="KC6-Fp-xdF" secondAttribute="bottom" id="EHO-Li-hKe"/>
+                            <constraint firstItem="Zoh-Bl-xru" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="IhJ-fC-F7M"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KC6-Fp-xdF" secondAttribute="trailing" id="VAp-rT-R9t"/>
+                            <constraint firstItem="Zoh-Bl-xru" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="W03-sw-bxm"/>
                             <constraint firstItem="KC6-Fp-xdF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="d98-eu-5zE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -37,6 +46,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="32.799999999999997" y="31.934032983508249"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="gps" width="256" height="256"/>
+    </resources>
 </document>
