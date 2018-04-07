@@ -29,6 +29,10 @@ class ViewController: UIViewController {
         map.camera = mapCamera
 
         updateCenter()
+
+        let gesture = UIPanGestureRecognizer(target: self, action: #selector(ViewController.mapViewDidDrag))
+        gesture.delegate = self
+        map.addGestureRecognizer(gesture)
     }
 
     @IBAction func lol(_ sender: Any) {
@@ -125,5 +129,26 @@ extension ViewController: MKMapViewDelegate {
         }
     }
 
+    func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
+        updateCenter()
+    }
+
+    func mapView(_ mapView: MKMapView, regionWillChangeAnimated animated: Bool) {
+        updateCenter()
+    }
+
+
+
+}
+
+extension ViewController: UIGestureRecognizerDelegate {
+
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
+    }
+
+    @objc func mapViewDidDrag () {
+        updateCenter()
+    }
 }
 
