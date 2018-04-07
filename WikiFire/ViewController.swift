@@ -69,6 +69,7 @@ class ViewController: UIViewController {
 
             let point = MKPointAnnotation()
             point.title = key
+            point.subtitle = "Tap me! 💌"
             point.coordinate = CLLocationCoordinate2DMake((location?.coordinate.latitude)!, (location?.coordinate.longitude)!)
 
             DispatchQueue.main.async {
