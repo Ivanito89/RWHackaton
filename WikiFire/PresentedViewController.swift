@@ -66,6 +66,17 @@ class PresentedViewController: UIViewController {
                                         self.presentedView.wikiLabel.text = extract
                                         //self.presentedView.bodyLabel.text = extract
                                     }
+
+                                    if let images = page["images"] as? [Any] {
+                                        if let image = images.first as? [String: Any] {
+                                            if let title = image["title"] as? String {
+                                                let formattedTitle = title.replacingOccurrences(of: "Fil", with: "File")
+                                                let charFormattedTitle = formattedTitle.replacingOccurrences(of: " ", with: "%20")
+                                                self.requestImage(url: charFormattedTitle)
+                                            }
+                                        }
+                                    }
+
                                 }
 
                             }
@@ -81,6 +92,10 @@ class PresentedViewController: UIViewController {
             print("Problem...")
         }
 
+    }
+
+    func requestImage(url: String) {
+        
     }
 
     @IBAction func unwindFromModal(with segue: UIStoryboardSegue) {}

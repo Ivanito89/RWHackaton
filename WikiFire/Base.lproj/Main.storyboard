@@ -173,6 +173,7 @@
                             <outlet property="dividerView" destination="TX6-Pv-dIc" id="QAz-HA-6yM"/>
                             <outlet property="imageView" destination="EBI-3z-pQa" id="SXa-7x-4El"/>
                             <outlet property="titleLabel" destination="CLE-ac-ydO" id="Xgn-8P-Gqs"/>
+                            <outlet property="wikiImageView" destination="EBI-3z-pQa" id="FYH-aW-CYr"/>
                             <outlet property="wikiLabel" destination="LPB-dR-BQh" id="w15-18-wCb"/>
                         </connections>
                     </view>
