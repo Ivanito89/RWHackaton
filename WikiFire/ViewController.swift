@@ -20,8 +20,8 @@ class ViewController: UIViewController {
     var infoShown: Bool? {
         didSet {
             if infoShown == true {
-                self.infoLabel.text = "Good job! Now tap one of the Wiki-articles shown as hearts."
-                DispatchQueue.main.asyncAfter(deadline: .now() + 6) { // change 2 to desired number of seconds
+                self.infoLabel.text = "Good job! The hearts are geotagged Wikipedia-articles. Tap one!"
+                DispatchQueue.main.asyncAfter(deadline: .now() + 8) { // change 2 to desired number of seconds
                     self.infoView.fadeOut()
                 }
             }
@@ -108,7 +108,7 @@ extension ViewController: MKMapViewDelegate {
         let annot = view.annotation as! MKPointAnnotation
 
         if UIApplication.shared.canOpenURL(URL.init(string: String(format: "https://no.wikipedia.org/?curid=%@", annot.title!))!) {
-            UIApplication.shared.openURL(URL.init(string: String(format: "https://no.wikipedia.org/?curid=%@", annot.title!))!)
+            UIApplication.shared.open(URL.init(string: String(format: "https://no.wikipedia.org/?curid=%@", annot.title!))!, options: [:]) { (success) in }
         }
     }
 
