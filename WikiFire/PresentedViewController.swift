@@ -67,12 +67,19 @@ class PresentedViewController: UIViewController {
                                     }
 
                                     if let images = page["images"] as? [Any] {
-                                        if let image = images.first as? [String: Any] {
-                                            if let title = image["title"] as? String {
-                                                let formattedTitle = title.replacingOccurrences(of: "Fil", with: "File")
-                                                //let charFormattedTitle = formattedTitle.replacingOccurrences(of: " ", with: "%20")
-                                                let imageMetaURL = "https://commons.wikimedia.org/w/api.php?action=query&titles=\(formattedTitle)&prop=imageinfo&iiprop=url&format=json"
-                                                self.requestImage(url: imageMetaURL)
+
+                                        for image in images {
+                                            if let dict = image as? [String: Any] {
+                                                if let title = dict["title"] as? String {
+                                                    if title.lowercased().contains("jpg") || title.lowercased().contains("png") {
+                                                        let formattedTitle = title.replacingOccurrences(of: "Fil", with: "File")
+                                                        //let charFormattedTitle = formattedTitle.replacingOccurrences(of: " ", with: "%20")
+                                                        let imageMetaURL = "https://commons.wikimedia.org/w/api.php?action=query&titles=\(formattedTitle)&prop=imageinfo&iiprop=url&format=json"
+                                                        self.requestImage(url: imageMetaURL)
+                                                        print("Found jpg or png.")
+                                                        break
+                                                    }
+                                                }
                                             }
                                         }
                                     }
@@ -125,6 +132,7 @@ class PresentedViewController: UIViewController {
                                 if let imageInfo = page["imageinfo"] as? [[String: Any]] {
                                     if let imageURL = imageInfo.first!["url"] as? String {
                                         DispatchQueue.main.async {
+                                            print("Trying to download \(imageURL)")
                                             self.presentedView.wikiImageView.downloadedFrom(link: imageURL)
                                         }
                                     }
