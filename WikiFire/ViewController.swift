@@ -137,8 +137,6 @@ extension ViewController: MKMapViewDelegate {
         updateCenter()
     }
 
-
-
 }
 
 extension ViewController: UIGestureRecognizerDelegate {
