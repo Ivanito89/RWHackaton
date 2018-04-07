@@ -10,12 +10,15 @@ import UIKit
 import MapKit
 import FirebaseDatabase
 import GeoFire
+import DrawerKit
 
 class ViewController: UIViewController {
 
     @IBOutlet weak var map: MKMapView!
     @IBOutlet weak var infoView: RoundedView!
     @IBOutlet weak var infoLabel: UILabel!
+
+    var drawerDisplayController: DrawerDisplayController?
 
     var infoShown: Bool? {
         didSet {
@@ -107,11 +110,15 @@ extension ViewController: MKMapViewDelegate {
 
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
 
-        let annot = view.annotation as! MKPointAnnotation
+        /*let annot = view.annotation as! MKPointAnnotation
 
         if UIApplication.shared.canOpenURL(URL.init(string: String(format: "https://no.wikipedia.org/?curid=%@", annot.title!))!) {
             UIApplication.shared.open(URL.init(string: String(format: "https://no.wikipedia.org/?curid=%@", annot.title!))!, options: [:]) { (success) in }
-        }
+        }*/
+
+        mapView.deselectAnnotation(view.annotation, animated: true)
+
+        doModalPresentation()
     }
 
     func updateCenter() {
@@ -164,5 +171,59 @@ extension ViewController: UIGestureRecognizerDelegate {
     @objc func mapViewDidDrag () {
         updateCenter()
     }
+}
+
+extension ViewController: DrawerCoordinating {
+
+    func doModalPresentation() {
+        guard let vc = storyboard?.instantiateViewController(withIdentifier: "presented")
+            as? PresentedViewController else { return }
+
+        // you can provide the configuration values in the initialiser...
+        var configuration = DrawerConfiguration(/* ..., ..., ..., */)
+
+        // ... or after initialisation. All of these have default values so change only
+        // what you need to configure differently. They're all listed here just so you
+        // can see what can be configured. The values listed are the default ones,
+        // except where indicated otherwise.
+        configuration.totalDurationInSeconds = 0.4
+        configuration.durationIsProportionalToDistanceTraveled = false
+        // default is UISpringTimingParameters()
+        configuration.timingCurveProvider = UISpringTimingParameters(dampingRatio: 0.8)
+        configuration.fullExpansionBehaviour = .coversFullScreen
+        configuration.supportsPartialExpansion = true
+        configuration.dismissesInStages = true
+        configuration.isDrawerDraggable = true
+        configuration.isFullyPresentableByDrawerTaps = true
+        configuration.numberOfTapsForFullDrawerPresentation = 1
+        configuration.isDismissableByOutsideDrawerTaps = true
+        configuration.numberOfTapsForOutsideDrawerDismissal = 1
+        configuration.flickSpeedThreshold = 3
+        configuration.upperMarkGap = 100 // default is 40
+        configuration.lowerMarkGap =  80 // default is 40
+        configuration.maximumCornerRadius = 15
+
+        var handleViewConfiguration = HandleViewConfiguration()
+        handleViewConfiguration.autoAnimatesDimming = true
+        handleViewConfiguration.backgroundColor = .gray
+        handleViewConfiguration.size = CGSize(width: 40, height: 6)
+        handleViewConfiguration.top = 8
+        handleViewConfiguration.cornerRadius = .automatic
+        configuration.handleViewConfiguration = handleViewConfiguration
+
+        let drawerShadowConfiguration = DrawerShadowConfiguration(shadowOpacity: 0.6,
+                                                                  shadowRadius: 4,
+                                                                  shadowOffset: .zero,
+                                                                  shadowColor: UIColor.lightGray)
+        configuration.drawerShadowConfiguration = drawerShadowConfiguration // default is nil
+
+        drawerDisplayController = DrawerDisplayController(presentingViewController: self,
+                                                          presentedViewController: vc,
+                                                          configuration: configuration,
+                                                          inDebugMode: false)
+
+        present(vc, animated: true)
+    }
+
 }
 

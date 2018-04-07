@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -50,7 +51,7 @@
                                         <real key="value" value="8"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
-                                        <color key="value" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                         <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -82,8 +83,95 @@
             </objects>
             <point key="canvasLocation" x="32.799999999999997" y="31.934032983508249"/>
         </scene>
+        <!--Presented-->
+        <scene sceneID="URs-XW-TX0">
+            <objects>
+                <viewController storyboardIdentifier="presented" title="Presented" id="tgM-em-zXV" customClass="PresentedViewController" customModule="DrawerKitDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="zsd-DG-yfr"/>
+                        <viewControllerLayoutGuide type="bottom" id="QHp-oW-Uqi"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tQE-g8-92s" customClass="PresentedView" customModule="DrawerKitDemo" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="Saturn" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CLE-ac-ydO">
+                                <rect key="frame" x="148.5" y="48" width="78.5" height="30"/>
+                                <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="calibratedWhite"/>
+                                <accessibility key="accessibilityConfiguration" identifier="drawerTitle"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="Swipe up for more details!" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="300" translatesAutoresizingMaskIntoConstraints="NO" id="YGH-QN-pzO">
+                                <rect key="frame" x="88" y="88" width="199.5" height="20.5"/>
+                                <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="calibratedWhite"/>
+                                <accessibility key="accessibilityConfiguration" identifier="drawerDescription"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TX6-Pv-dIc">
+                                <rect key="frame" x="0.0" y="156.5" width="375" height="1"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="UYS-4I-q0f"/>
+                                </constraints>
+                            </view>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" alwaysBounceHorizontal="YES" minimumZoomScale="0.25" maximumZoomScale="1.5" translatesAutoresizingMaskIntoConstraints="NO" id="d04-Zy-jjY">
+                                <rect key="frame" x="26" y="177.5" width="323" height="469.5"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Saturn" translatesAutoresizingMaskIntoConstraints="NO" id="EBI-3z-pQa">
+                                        <rect key="frame" x="0.0" y="0.0" width="323" height="469.5"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="saturnImage"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="EBI-3z-pQa" secondAttribute="trailing" id="8xe-Og-PAw"/>
+                                    <constraint firstItem="EBI-3z-pQa" firstAttribute="top" secondItem="d04-Zy-jjY" secondAttribute="top" id="FUh-US-Vc3"/>
+                                    <constraint firstItem="EBI-3z-pQa" firstAttribute="centerX" secondItem="d04-Zy-jjY" secondAttribute="centerX" id="GGQ-hI-1j3"/>
+                                    <constraint firstAttribute="bottom" secondItem="EBI-3z-pQa" secondAttribute="bottom" id="MJY-6S-Ylg"/>
+                                    <constraint firstItem="EBI-3z-pQa" firstAttribute="leading" secondItem="d04-Zy-jjY" secondAttribute="leading" id="QKY-Uk-82h"/>
+                                    <constraint firstItem="EBI-3z-pQa" firstAttribute="centerY" secondItem="d04-Zy-jjY" secondAttribute="centerY" id="daR-tl-5Kg"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="tgM-em-zXV" id="1MZ-iw-k1F"/>
+                                </connections>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.98641773769999996" green="1" blue="0.86048240480000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="CLE-ac-ydO" firstAttribute="centerX" secondItem="tQE-g8-92s" secondAttribute="centerX" id="5Nl-Bn-Ilx"/>
+                            <constraint firstItem="d04-Zy-jjY" firstAttribute="top" secondItem="TX6-Pv-dIc" secondAttribute="bottom" constant="20" id="8UE-6U-RrB"/>
+                            <constraint firstItem="YGH-QN-pzO" firstAttribute="top" secondItem="CLE-ac-ydO" secondAttribute="bottom" constant="10" id="A1H-Tj-78G"/>
+                            <constraint firstItem="YGH-QN-pzO" firstAttribute="centerX" secondItem="tQE-g8-92s" secondAttribute="centerX" id="A4P-ZR-mlk"/>
+                            <constraint firstAttribute="trailing" secondItem="TX6-Pv-dIc" secondAttribute="trailing" id="Ocv-rH-aZS"/>
+                            <constraint firstItem="TX6-Pv-dIc" firstAttribute="leading" secondItem="tQE-g8-92s" secondAttribute="leading" id="RVX-K8-4N9"/>
+                            <constraint firstItem="TX6-Pv-dIc" firstAttribute="top" secondItem="YGH-QN-pzO" secondAttribute="bottom" constant="48" id="e8R-FR-cr5"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="d04-Zy-jjY" secondAttribute="bottom" constant="20" id="fAa-I5-DmI"/>
+                            <constraint firstItem="d04-Zy-jjY" firstAttribute="leading" secondItem="tQE-g8-92s" secondAttribute="leadingMargin" constant="10" id="kq4-3a-Pij"/>
+                            <constraint firstItem="CLE-ac-ydO" firstAttribute="top" secondItem="tQE-g8-92s" secondAttribute="top" constant="48" id="mcT-p1-Tmq"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="d04-Zy-jjY" secondAttribute="trailing" constant="10" id="uQL-Ra-Ozu"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="pGv-9b-Woq"/>
+                        <connections>
+                            <outlet property="bodyLabel" destination="YGH-QN-pzO" id="KKN-hK-wKP"/>
+                            <outlet property="dividerView" destination="TX6-Pv-dIc" id="QAz-HA-6yM"/>
+                            <outlet property="imageView" destination="EBI-3z-pQa" id="SXa-7x-4El"/>
+                            <outlet property="titleLabel" destination="CLE-ac-ydO" id="Xgn-8P-Gqs"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="presentedView" destination="tQE-g8-92s" id="5Rq-Yg-Wfi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="148-Ys-oeF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="758" y="32"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="Saturn" width="16" height="16"/>
         <image name="gps" width="256" height="256"/>
     </resources>
 </document>

@@ -14,6 +14,8 @@
 		2CBC32E420782DA100388EBA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CBC32E220782DA100388EBA /* LaunchScreen.storyboard */; };
 		2CBC32ED2078354300388EBA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2CBC32EC2078354300388EBA /* GoogleService-Info.plist */; };
 		2CBC32F0207874C000388EBA /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBC32EF207874C000388EBA /* RoundedView.swift */; };
+		2CBC32F3207881E300388EBA /* PresentedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBC32F1207881E200388EBA /* PresentedView.swift */; };
+		2CBC32F4207881E300388EBA /* PresentedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBC32F2207881E200388EBA /* PresentedViewController.swift */; };
 		514332C015E427047FAE573B /* Pods_WikiFire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 163E73B095F5344607464A11 /* Pods_WikiFire.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +31,8 @@
 		2CBC32E520782DA100388EBA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2CBC32EC2078354300388EBA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2CBC32EF207874C000388EBA /* RoundedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
+		2CBC32F1207881E200388EBA /* PresentedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentedView.swift; sourceTree = "<group>"; };
+		2CBC32F2207881E200388EBA /* PresentedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentedViewController.swift; sourceTree = "<group>"; };
 		59CADF91EA49FFBB87A4311F /* Pods-WikiFire.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WikiFire.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WikiFire/Pods-WikiFire.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -68,6 +72,8 @@
 				2CBC32D920782DA000388EBA /* AppDelegate.swift */,
 				2CBC32DB20782DA000388EBA /* ViewController.swift */,
 				2CBC32EF207874C000388EBA /* RoundedView.swift */,
+				2CBC32F1207881E200388EBA /* PresentedView.swift */,
+				2CBC32F2207881E200388EBA /* PresentedViewController.swift */,
 				2CBC32DD20782DA000388EBA /* Main.storyboard */,
 				2CBC32E020782DA100388EBA /* Assets.xcassets */,
 				2CBC32E220782DA100388EBA /* LaunchScreen.storyboard */,
@@ -205,6 +211,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-WikiFire/Pods-WikiFire-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/DrawerKit/DrawerKit.framework",
 				"${BUILT_PRODUCTS_DIR}/GeoFire/GeoFire.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
@@ -212,6 +219,7 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DrawerKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GeoFire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
@@ -232,6 +240,8 @@
 				2CBC32DC20782DA000388EBA /* ViewController.swift in Sources */,
 				2CBC32DA20782DA000388EBA /* AppDelegate.swift in Sources */,
 				2CBC32F0207874C000388EBA /* RoundedView.swift in Sources */,
+				2CBC32F4207881E300388EBA /* PresentedViewController.swift in Sources */,
+				2CBC32F3207881E300388EBA /* PresentedView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

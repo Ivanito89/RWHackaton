@@ -24,7 +24,7 @@ class RoundedView: UIView {
         }
     }
 
-    @IBInspectable var shadowColor: UIColor = UIColor.black {
+    @IBInspectable var shadowColor: UIColor = UIColor.lightGray {
         didSet {
             layer.shadowColor = shadowColor.cgColor
             layer.shadowOpacity = 0.6
