@@ -95,7 +95,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="Saturn" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CLE-ac-ydO">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CLE-ac-ydO">
                                 <rect key="frame" x="32" y="48" width="311" height="30"/>
                                 <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="calibratedWhite"/>
                                 <accessibility key="accessibilityConfiguration" identifier="drawerTitle"/>
@@ -121,7 +121,7 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" alwaysBounceHorizontal="YES" contentInsetAdjustmentBehavior="never" minimumZoomScale="0.25" maximumZoomScale="1.5" translatesAutoresizingMaskIntoConstraints="NO" id="d04-Zy-jjY">
                                 <rect key="frame" x="16" y="157" width="343" height="490"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wiki" translatesAutoresizingMaskIntoConstraints="NO" id="EBI-3z-pQa">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EBI-3z-pQa">
                                         <rect key="frame" x="16" y="52" width="311" height="150"/>
                                         <accessibility key="accessibilityConfiguration" identifier="saturnImage"/>
                                         <constraints>
@@ -188,6 +188,5 @@
     </scenes>
     <resources>
         <image name="gps" width="256" height="256"/>
-        <image name="wiki" width="37" height="48"/>
     </resources>
 </document>

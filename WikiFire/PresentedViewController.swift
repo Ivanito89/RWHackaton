@@ -55,7 +55,6 @@ class PresentedViewController: UIViewController {
 
                 do {
                     let result = try JSONSerialization.jsonObject(with: data, options: []) as? [String:AnyObject]
-                    print("Result -> \(result)")
 
                     if let query = result!["query"] as? [String: Any] {
                         if let pages = query["pages"] as? [String: Any] {
@@ -71,8 +70,9 @@ class PresentedViewController: UIViewController {
                                         if let image = images.first as? [String: Any] {
                                             if let title = image["title"] as? String {
                                                 let formattedTitle = title.replacingOccurrences(of: "Fil", with: "File")
-                                                let charFormattedTitle = formattedTitle.replacingOccurrences(of: " ", with: "%20")
-                                                self.requestImage(url: charFormattedTitle)
+                                                //let charFormattedTitle = formattedTitle.replacingOccurrences(of: " ", with: "%20")
+                                                let imageMetaURL = "https://commons.wikimedia.org/w/api.php?action=query&titles=\(formattedTitle)&prop=imageinfo&iiprop=url&format=json"
+                                                self.requestImage(url: imageMetaURL)
                                             }
                                         }
                                     }
@@ -95,7 +95,53 @@ class PresentedViewController: UIViewController {
     }
 
     func requestImage(url: String) {
-        
+
+        if let url = URL(string: url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!){
+            var request = URLRequest(url: url)
+            request.httpMethod = "GET"
+            request.timeoutInterval = 10
+            _ = URLSession.shared.dataTask(with: request) { data, response, error in
+
+                // check for fundamental networking error
+                guard let data = data, error == nil else {
+                    if let local = error?.localizedDescription {
+                        print(local)
+                    }
+                    return
+                }
+
+                // check for http errors
+                if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {
+                    print(httpStatus.statusCode)
+                    return
+                }
+
+                do {
+                    let result = try JSONSerialization.jsonObject(with: data, options: []) as? [String:AnyObject]
+
+                    if let query = result!["query"] as? [String: Any] {
+                        if let pages = query["pages"] as? [String: Any] {
+                            if let page = pages.first?.value as? [String: Any] {
+                                if let imageInfo = page["imageinfo"] as? [[String: Any]] {
+                                    if let imageURL = imageInfo.first!["url"] as? String {
+                                        DispatchQueue.main.async {
+                                            self.presentedView.wikiImageView.downloadedFrom(link: imageURL)
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                } catch {
+                    print("Error -> \(error)")
+                }
+
+                }.resume()
+        }else{
+            print("Problem...")
+        }
+
     }
 
     @IBAction func unwindFromModal(with segue: UIStoryboardSegue) {}
