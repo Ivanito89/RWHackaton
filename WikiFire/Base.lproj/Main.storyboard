@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </mapView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gps" translatesAutoresizingMaskIntoConstraints="NO" id="Zoh-Bl-xru">
-                                <rect key="frame" x="162" y="308.5" width="50" height="50"/>
+                                <rect key="frame" x="162" y="290.5" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="MnN-6S-7Zu"/>
                                     <constraint firstAttribute="height" constant="50" id="edj-jV-Qmd"/>
@@ -43,7 +43,7 @@
                             <constraint firstAttribute="bottom" secondItem="KC6-Fp-xdF" secondAttribute="bottom" id="EHO-Li-hKe"/>
                             <constraint firstItem="Zoh-Bl-xru" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="IhJ-fC-F7M"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KC6-Fp-xdF" secondAttribute="trailing" id="VAp-rT-R9t"/>
-                            <constraint firstItem="Zoh-Bl-xru" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="W03-sw-bxm"/>
+                            <constraint firstItem="Zoh-Bl-xru" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-18" id="W03-sw-bxm"/>
                             <constraint firstItem="KC6-Fp-xdF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="d98-eu-5zE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>

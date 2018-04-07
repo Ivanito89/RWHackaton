@@ -21,6 +21,7 @@ class ViewController: UIViewController {
         map.delegate = self
         map.setRegion(MKCoordinateRegion(center: CLLocationCoordinate2D.init(latitude: 59.9229, longitude: 10.7179), span: MKCoordinateSpan(latitudeDelta: 0.03157, longitudeDelta: 0.03218)), animated: false)
 
+        updateCenter()
     }
 
     @IBAction func lol(_ sender: Any) {
@@ -88,6 +89,32 @@ extension ViewController: MKMapViewDelegate {
 
         if UIApplication.shared.canOpenURL(URL.init(string: String(format: "https://no.wikipedia.org/?curid=%@", annot.title!))!) {
             UIApplication.shared.openURL(URL.init(string: String(format: "https://no.wikipedia.org/?curid=%@", annot.title!))!)
+        }
+    }
+
+    func updateCenter() {
+
+        for overlay in map.overlays {
+            if overlay is MKCircle {
+                map.remove(overlay)
+            }
+        }
+
+        let circle = MKCircle(center: map.centerCoordinate, radius: 300.0)
+        map.add(circle)
+
+    }
+
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        if overlay is MKCircle {
+            let circle = MKCircleRenderer(overlay: overlay)
+            circle.lineDashPattern = [2, 5]
+            circle.strokeColor = UIColor.blue.withAlphaComponent(0.4)
+            circle.fillColor = UIColor.blue.withAlphaComponent(0.05)
+            circle.lineWidth = 1
+            return circle
+        } else {
+            return MKPolylineRenderer()
         }
     }
 
