@@ -5,6 +5,7 @@ class PresentedView: UIView {
     @IBOutlet weak var bodyLabel: UILabel!
     @IBOutlet weak var dividerView: UIView!
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var wikiLabel: UILabel!
 }
 
 extension PresentedView {
@@ -37,11 +38,11 @@ extension PresentedView {
 
 extension PresentedView {
     func preparePartiallyExpandedToFullyExpanded() {
-        //bodyLabel.transform = .identity
+        bodyLabel.transform = .identity
     }
 
     func animateAlongPartiallyExpandedToFullyExpanded() {
-        //bodyLabel.transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
+        bodyLabel.transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
     }
 
     func cleanupPartiallyExpandedToFullyExpanded() {
@@ -63,11 +64,11 @@ extension PresentedView {
 
 extension PresentedView {
     func prepareCollapsedToFullyExpanded() {
-        //bodyLabel.transform = .identity
+        bodyLabel.transform = .identity
     }
 
     func animateAlongCollapsedToFullyExpanded() {
-        //bodyLabel.transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
+        bodyLabel.transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
     }
 
     func cleanupCollapsedToFullyExpanded() {

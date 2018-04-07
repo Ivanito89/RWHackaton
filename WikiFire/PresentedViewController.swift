@@ -63,7 +63,8 @@ class PresentedViewController: UIViewController {
                                 if let extract = page["extract"] as? String, let title = page["title"] as? String {
                                     DispatchQueue.main.async {
                                         self.presentedView.titleLabel.text = title
-                                        self.presentedView.bodyLabel.text = extract
+                                        self.presentedView.wikiLabel.text = extract
+                                        //self.presentedView.bodyLabel.text = extract
                                     }
                                 }
 
@@ -88,6 +89,12 @@ class PresentedViewController: UIViewController {
 extension PresentedViewController: UIScrollViewDelegate {
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         return (view as? PresentedView)?.imageView
+    }
+
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView.contentOffset.x != 0 {
+            scrollView.contentOffset.x = 0
+        }
     }
 }
 
