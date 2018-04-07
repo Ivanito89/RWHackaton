@@ -29,6 +29,17 @@ class ViewController: UIViewController {
 
     func queryAtRegion (radius: Double) {
 
+        let location : CLLocation = CLLocation.init(latitude: map.centerCoordinate.latitude, longitude: map.centerCoordinate.longitude)
+
+        let geoFireReference = Database.database().reference()
+        let geoFire = GeoFire.init(firebaseRef: geoFireReference.child("geotags"))
+        let radiusQuery = geoFire.query(at: location, withRadius: radius)
+
+        radiusQuery.observe(GFEventType.keyEntered, with: { (key: String?, location: CLLocation?) in
+
+            print("Key '%@' entered the search area and is at location '%@'", key!, location!)
+
+        })
     }
 }
 
