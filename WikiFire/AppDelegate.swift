@@ -18,6 +18,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         FirebaseApp.configure()
 
+        Auth.auth().signInAnonymously { (user, error) in
+            print("\(user!.uid) just signed in anonymously.")
+        }
+
         return true
     }
 

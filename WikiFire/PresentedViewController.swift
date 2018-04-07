@@ -1,5 +1,6 @@
 import UIKit
 import DrawerKit
+import Firebase
 
 class PresentedViewController: UIViewController {
     private var notificationToken: NotificationToken!
@@ -11,6 +12,7 @@ class PresentedViewController: UIViewController {
 
     var curid: String? {
         didSet {
+            checkIfVisited()
             fetchWikipediaInformation(curid: curid!)
         }
     }
@@ -27,6 +29,20 @@ class PresentedViewController: UIViewController {
                 break
             }
         }
+    }
+
+    func checkIfVisited() {
+
+        let ref = Database.database().reference()
+        ref.child("visitors").child(Auth.auth().currentUser!.uid).child(curid!).observeSingleEvent(of: .value) { (snapshot) in
+            if !snapshot.exists() {
+                print("Not visited yet.")
+                ref.child("visitors").child(Auth.auth().currentUser!.uid).child(self.curid!).setValue(true)
+            }else {
+                print("Visited before.")
+            }
+        }
+
     }
 
     func fetchWikipediaInformation(curid: String) {
