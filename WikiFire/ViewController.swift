@@ -14,6 +14,19 @@ import GeoFire
 class ViewController: UIViewController {
 
     @IBOutlet weak var map: MKMapView!
+    @IBOutlet weak var infoView: RoundedView!
+    @IBOutlet weak var infoLabel: UILabel!
+
+    var infoShown: Bool? {
+        didSet {
+            if infoShown == true {
+                self.infoLabel.text = "Good job! Now tap one of the Wiki-articles shown as hearts."
+                DispatchQueue.main.asyncAfter(deadline: .now() + 6) { // change 2 to desired number of seconds
+                    self.infoView.fadeOut()
+                }
+            }
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +46,8 @@ class ViewController: UIViewController {
         let gesture = UIPanGestureRecognizer(target: self, action: #selector(ViewController.mapViewDidDrag))
         gesture.delegate = self
         map.addGestureRecognizer(gesture)
+
+        infoShown = false
     }
 
     func queryAtRegion (radius: Double) {
@@ -126,6 +141,10 @@ extension ViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
         updateCenter()
         queryAtRegion(radius: 0.2) // 0.2 = 200 meters.
+
+        if infoShown == false {
+            infoShown = true
+        }
     }
 
     func mapView(_ mapView: MKMapView, regionWillChangeAnimated animated: Bool) {

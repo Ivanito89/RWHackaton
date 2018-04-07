@@ -28,19 +28,53 @@
                                     <constraint firstAttribute="height" constant="50" id="edj-jV-Qmd"/>
                                 </constraints>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eGk-Xw-48h" customClass="RoundedView" customModule="WikiFire" customModuleProvider="target">
+                                <rect key="frame" x="32" y="36" width="311" height="67"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Drag the map to simulate user movement in the map." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3J5-q8-for">
+                                        <rect key="frame" x="16" y="16" width="279" height="35"/>
+                                        <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.9864177377197505" green="1" blue="0.86048240476592319" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="3J5-q8-for" secondAttribute="bottom" constant="16" id="CCM-tk-YQX"/>
+                                    <constraint firstItem="3J5-q8-for" firstAttribute="top" secondItem="eGk-Xw-48h" secondAttribute="top" constant="16" id="XLU-r4-gbf"/>
+                                    <constraint firstAttribute="trailing" secondItem="3J5-q8-for" secondAttribute="trailing" constant="16" id="Xjx-Ro-u5X"/>
+                                    <constraint firstItem="3J5-q8-for" firstAttribute="leading" secondItem="eGk-Xw-48h" secondAttribute="leading" constant="16" id="vZR-zi-TdL"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="KC6-Fp-xdF" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="5KM-5d-ivx"/>
+                            <constraint firstItem="eGk-Xw-48h" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="A9R-hk-pi0"/>
                             <constraint firstAttribute="bottom" secondItem="KC6-Fp-xdF" secondAttribute="bottom" id="EHO-Li-hKe"/>
                             <constraint firstItem="Zoh-Bl-xru" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="IhJ-fC-F7M"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KC6-Fp-xdF" secondAttribute="trailing" id="VAp-rT-R9t"/>
                             <constraint firstItem="Zoh-Bl-xru" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-18" id="W03-sw-bxm"/>
+                            <constraint firstItem="eGk-Xw-48h" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="b1Y-Ax-xip"/>
                             <constraint firstItem="KC6-Fp-xdF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="d98-eu-5zE"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="eGk-Xw-48h" secondAttribute="trailing" constant="32" id="oyo-tb-fx0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="infoLabel" destination="3J5-q8-for" id="m2c-LB-yDV"/>
+                        <outlet property="infoView" destination="eGk-Xw-48h" id="o1L-ed-Fhs"/>
                         <outlet property="map" destination="KC6-Fp-xdF" id="WoH-xW-WS1"/>
                     </connections>
                 </viewController>
