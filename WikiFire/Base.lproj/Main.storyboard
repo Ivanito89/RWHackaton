@@ -58,6 +58,12 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Made by Ivan Hjelmeland at RWDevCon 2018" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gPR-gL-u44">
+                                <rect key="frame" x="40" y="651" width="295" height="12"/>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="10"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -67,8 +73,11 @@
                             <constraint firstItem="Zoh-Bl-xru" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="IhJ-fC-F7M"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KC6-Fp-xdF" secondAttribute="trailing" id="VAp-rT-R9t"/>
                             <constraint firstItem="Zoh-Bl-xru" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-18" id="W03-sw-bxm"/>
+                            <constraint firstItem="gPR-gL-u44" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="ad6-sI-mOk"/>
                             <constraint firstItem="eGk-Xw-48h" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="b1Y-Ax-xip"/>
                             <constraint firstItem="KC6-Fp-xdF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="d98-eu-5zE"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="gPR-gL-u44" secondAttribute="bottom" constant="4" id="g1D-Ny-KqB"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gPR-gL-u44" secondAttribute="trailing" constant="40" id="g6g-5K-U1a"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="eGk-Xw-48h" secondAttribute="trailing" constant="32" id="oyo-tb-fx0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
