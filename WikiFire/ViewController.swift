@@ -76,6 +76,7 @@ extension ViewController: MKMapViewDelegate {
         if let annotationView = annotationView {
             annotationView.canShowCallout = true
             annotationView.image = UIImage(named: "wiki")
+            annotationView.centerOffset.y = -22.0
         }
 
         return annotationView
