@@ -35,23 +35,17 @@ class ViewController: UIViewController {
         map.addGestureRecognizer(gesture)
     }
 
-    @IBAction func lol(_ sender: Any) {
-        queryAtRegion(radius: 0.2) // 0.2 = 200 meters.
-    }
-
     func queryAtRegion (radius: Double) {
 
         map.removeAnnotations(map.annotations)
 
-        let location : CLLocation = CLLocation.init(latitude: map.centerCoordinate.latitude, longitude: map.centerCoordinate.longitude)
+        let location : CLLocation = CLLocation(latitude: map.centerCoordinate.latitude, longitude: map.centerCoordinate.longitude)
 
         let geoFireReference = Database.database().reference()
         let geoFire = GeoFire.init(firebaseRef: geoFireReference.child("geotags"))
         let radiusQuery = geoFire.query(at: location, withRadius: radius)
 
         radiusQuery.observe(GFEventType.keyEntered, with: { (key: String?, location: CLLocation?) in
-
-            print("Key '%@' entered the search area and is at location '%@'", key!, location!)
 
             let point = MKPointAnnotation()
             point.title = key
@@ -131,6 +125,7 @@ extension ViewController: MKMapViewDelegate {
 
     func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
         updateCenter()
+        queryAtRegion(radius: 0.2) // 0.2 = 200 meters.
     }
 
     func mapView(_ mapView: MKMapView, regionWillChangeAnimated animated: Bool) {
