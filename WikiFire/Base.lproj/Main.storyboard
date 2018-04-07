@@ -95,12 +95,12 @@
         <!--Presented-->
         <scene sceneID="URs-XW-TX0">
             <objects>
-                <viewController storyboardIdentifier="presented" title="Presented" automaticallyAdjustsScrollViewInsets="NO" id="tgM-em-zXV" customClass="PresentedViewController" customModule="DrawerKitDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="presented" title="Presented" automaticallyAdjustsScrollViewInsets="NO" id="tgM-em-zXV" customClass="PresentedViewController" customModule="WikiFire" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zsd-DG-yfr"/>
                         <viewControllerLayoutGuide type="bottom" id="QHp-oW-Uqi"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="tQE-g8-92s" customClass="PresentedView" customModule="DrawerKitDemo" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="tQE-g8-92s" customClass="PresentedView" customModule="WikiFire" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -159,6 +159,13 @@
                                     <outlet property="delegate" destination="tgM-em-zXV" id="1MZ-iw-k1F"/>
                                 </connections>
                             </scrollView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Qc0-g0-mei">
+                                <rect key="frame" x="329" y="36" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="IGz-P9-Hrr"/>
+                                    <constraint firstAttribute="height" constant="30" id="Vgz-DL-oc8"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.98641773769999996" green="1" blue="0.86048240480000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -173,12 +180,15 @@
                             <constraint firstAttribute="bottomMargin" secondItem="d04-Zy-jjY" secondAttribute="bottom" constant="20" id="fAa-I5-DmI"/>
                             <constraint firstItem="d04-Zy-jjY" firstAttribute="leading" secondItem="tQE-g8-92s" secondAttribute="leadingMargin" id="kq4-3a-Pij"/>
                             <constraint firstItem="CLE-ac-ydO" firstAttribute="top" secondItem="tQE-g8-92s" secondAttribute="top" constant="48" id="mcT-p1-Tmq"/>
+                            <constraint firstItem="pGv-9b-Woq" firstAttribute="trailing" secondItem="Qc0-g0-mei" secondAttribute="trailing" constant="16" id="pKB-Ge-Oe8"/>
+                            <constraint firstItem="Qc0-g0-mei" firstAttribute="top" secondItem="zsd-DG-yfr" secondAttribute="bottom" constant="16" id="rSr-gX-G5K"/>
                             <constraint firstItem="CLE-ac-ydO" firstAttribute="leading" secondItem="pGv-9b-Woq" secondAttribute="leading" constant="32" id="u9r-1S-cvg"/>
                             <constraint firstAttribute="trailingMargin" secondItem="d04-Zy-jjY" secondAttribute="trailing" id="uQL-Ra-Ozu"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="pGv-9b-Woq"/>
                         <connections>
                             <outlet property="bodyLabel" destination="YGH-QN-pzO" id="KKN-hK-wKP"/>
+                            <outlet property="checkImageView" destination="Qc0-g0-mei" id="paK-OR-V4O"/>
                             <outlet property="dividerView" destination="TX6-Pv-dIc" id="QAz-HA-6yM"/>
                             <outlet property="imageView" destination="EBI-3z-pQa" id="SXa-7x-4El"/>
                             <outlet property="titleLabel" destination="CLE-ac-ydO" id="Xgn-8P-Gqs"/>

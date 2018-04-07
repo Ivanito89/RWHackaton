@@ -7,6 +7,7 @@ class PresentedView: UIView {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var wikiLabel: UILabel!
     @IBOutlet weak var wikiImageView: UIImageView!
+    @IBOutlet weak var checkImageView: UIImageView!
 }
 
 extension PresentedView {

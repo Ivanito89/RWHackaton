@@ -37,9 +37,15 @@ class PresentedViewController: UIViewController {
         ref.child("visitors").child(Auth.auth().currentUser!.uid).child(curid!).observeSingleEvent(of: .value) { (snapshot) in
             if !snapshot.exists() {
                 print("Not visited yet.")
+                DispatchQueue.main.async {
+                    self.presentedView.checkImageView.image = #imageLiteral(resourceName: "new")
+                }
                 ref.child("visitors").child(Auth.auth().currentUser!.uid).child(self.curid!).setValue(true)
             }else {
                 print("Visited before.")
+                DispatchQueue.main.async {
+                    self.presentedView.checkImageView.image = #imageLiteral(resourceName: "check")
+                }
             }
         }
 
