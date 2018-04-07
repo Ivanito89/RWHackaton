@@ -110,15 +110,15 @@ extension ViewController: MKMapViewDelegate {
 
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
 
-        /*let annot = view.annotation as! MKPointAnnotation
+        let annot = view.annotation as! MKPointAnnotation
 
-        if UIApplication.shared.canOpenURL(URL.init(string: String(format: "https://no.wikipedia.org/?curid=%@", annot.title!))!) {
+        /*if UIApplication.shared.canOpenURL(URL.init(string: String(format: "https://no.wikipedia.org/?curid=%@", annot.title!))!) {
             UIApplication.shared.open(URL.init(string: String(format: "https://no.wikipedia.org/?curid=%@", annot.title!))!, options: [:]) { (success) in }
         }*/
 
         mapView.deselectAnnotation(view.annotation, animated: true)
 
-        doModalPresentation()
+        doModalPresentation(curid: annot.title!)
     }
 
     func updateCenter() {
@@ -175,9 +175,11 @@ extension ViewController: UIGestureRecognizerDelegate {
 
 extension ViewController: DrawerCoordinating {
 
-    func doModalPresentation() {
+    func doModalPresentation(curid: String) {
         guard let vc = storyboard?.instantiateViewController(withIdentifier: "presented")
             as? PresentedViewController else { return }
+
+        vc.curid = curid
 
         // you can provide the configuration values in the initialiser...
         var configuration = DrawerConfiguration(/* ..., ..., ..., */)

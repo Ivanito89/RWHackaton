@@ -9,6 +9,12 @@ class PresentedViewController: UIViewController {
         dismiss(animated: true)
     }
 
+    var curid: String? {
+        didSet {
+            fetchWikipediaInformation(curid: curid!)
+        }
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.notificationToken = NotificationCenter.default
@@ -21,6 +27,42 @@ class PresentedViewController: UIViewController {
                 break
             }
         }
+    }
+
+    func fetchWikipediaInformation(curid: String) {
+
+        let string = String(format:"https://no.wikipedia.org/w/api.php?action=query&prop=pageimages|images|info|extracts&pageids=\(curid)&inprop=url&format=json&exlimit=max&explaintext&exintro")
+
+        if let url = URL(string: string.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!){
+            var request = URLRequest(url: url)
+            request.httpMethod = "GET"
+            request.timeoutInterval = 10
+            _ = URLSession.shared.dataTask(with: request) { data, response, error in
+
+                // check for fundamental networking error
+                guard let data = data, error == nil else {
+                    print(error?.localizedDescription)
+                    return
+                }
+
+                // check for http errors
+                if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {
+                    print(httpStatus.statusCode)
+                    return
+                }
+
+                do {
+                    let result = try JSONSerialization.jsonObject(with: data, options: []) as? [String:AnyObject]
+                    print("Result -> \(result)")
+                } catch {
+                    print("Error -> \(error)")
+                }
+
+                }.resume()
+        }else{
+            print("Problem...")
+        }
+
     }
 
     @IBAction func unwindFromModal(with segue: UIStoryboardSegue) {}
