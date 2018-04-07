@@ -130,7 +130,7 @@ extension ViewController: MKMapViewDelegate {
             }
         }
 
-        let circle = MKCircle(center: map.centerCoordinate, radius: 300.0)
+        let circle = MKCircle(center: map.centerCoordinate, radius: 200.0)
         map.add(circle)
 
     }
