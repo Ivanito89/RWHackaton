@@ -19,7 +19,14 @@ class ViewController: UIViewController {
         super.viewDidLoad()
 
         map.delegate = self
-        map.setRegion(MKCoordinateRegion(center: CLLocationCoordinate2D.init(latitude: 59.9229, longitude: 10.7179), span: MKCoordinateSpan(latitudeDelta: 0.03157, longitudeDelta: 0.03218)), animated: false)
+        map.setRegion(MKCoordinateRegion(center: CLLocationCoordinate2D.init(latitude: 59.9239, longitude: 10.7069), span: MKCoordinateSpan(latitudeDelta: 0.01553, longitudeDelta: 0.01316)), animated: false)
+
+        let mapCamera = MKMapCamera()
+        mapCamera.centerCoordinate = map.centerCoordinate
+        mapCamera.pitch = 50
+        mapCamera.altitude = 1000
+        mapCamera.heading = 360
+        map.camera = mapCamera
 
         updateCenter()
     }
