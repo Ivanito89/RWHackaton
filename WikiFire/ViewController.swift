@@ -8,6 +8,8 @@
 
 import UIKit
 import MapKit
+import FirebaseDatabase
+import GeoFire
 
 class ViewController: UIViewController {
 
@@ -22,6 +24,11 @@ class ViewController: UIViewController {
 
     @IBAction func lol(_ sender: Any) {
         print("")
+        queryAtRegion(radius: 0.5) // 0.5 = 500 meters.
+    }
+
+    func queryAtRegion (radius: Double) {
+
     }
 }
 
