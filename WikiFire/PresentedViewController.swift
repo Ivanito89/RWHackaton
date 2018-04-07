@@ -41,7 +41,9 @@ class PresentedViewController: UIViewController {
 
                 // check for fundamental networking error
                 guard let data = data, error == nil else {
-                    print(error?.localizedDescription)
+                    if let local = error?.localizedDescription {
+                        print(local)
+                    }
                     return
                 }
 
@@ -54,6 +56,21 @@ class PresentedViewController: UIViewController {
                 do {
                     let result = try JSONSerialization.jsonObject(with: data, options: []) as? [String:AnyObject]
                     print("Result -> \(result)")
+
+                    if let query = result!["query"] as? [String: Any] {
+                        if let pages = query["pages"] as? [String: Any] {
+                            if let page = pages.first?.value as? [String: Any] {
+                                if let extract = page["extract"] as? String, let title = page["title"] as? String {
+                                    DispatchQueue.main.async {
+                                        self.presentedView.titleLabel.text = title
+                                        self.presentedView.bodyLabel.text = extract
+                                    }
+                                }
+
+                            }
+                        }
+                    }
+
                 } catch {
                     print("Error -> \(error)")
                 }
