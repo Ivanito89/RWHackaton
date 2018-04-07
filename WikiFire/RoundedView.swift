@@ -50,3 +50,19 @@ extension RoundedView {
     }
 
 }
+
+extension UILabel {
+
+    func fadeIn() {
+        UILabel.animate(withDuration: 0.1, delay: 0.0, options: UIViewAnimationOptions.curveEaseIn, animations: {
+            self.alpha = 1.0
+        }, completion: nil)
+    }
+
+    func fadeOut() {
+        UILabel.animate(withDuration: 0.1, delay: 0.0, options: UIViewAnimationOptions.curveEaseOut, animations: {
+            self.alpha = 0.0
+        }, completion: nil)
+    }
+
+}

@@ -20,7 +20,9 @@ class ViewController: UIViewController {
     var infoShown: Bool? {
         didSet {
             if infoShown == true {
-                self.infoLabel.text = "Good job! The hearts are geotagged Wikipedia-articles. Tap one!"
+                self.infoLabel.alpha = 0.0
+                self.infoLabel.text = "Great! The hearts are geotagged Wikipedia-articles. Tap one!"
+                self.infoLabel.fadeIn()
                 DispatchQueue.main.asyncAfter(deadline: .now() + 8) { // change 2 to desired number of seconds
                     self.infoView.fadeOut()
                 }
